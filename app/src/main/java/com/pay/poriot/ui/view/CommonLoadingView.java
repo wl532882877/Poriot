@@ -1,0 +1,9 @@
+package com.pay.poriot.ui.view;
+
+import com.pay.poriot.base.IView;
+
+public interface CommonLoadingView extends IView {
+    void showLoading();
+
+    void dismissLoading();
+}

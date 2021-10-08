@@ -1,0 +1,131 @@
+plugins {
+    id 'com.android.application'
+    id 'org.greenrobot.greendao'
+    id 'realm-android'
+}
+
+android {
+    compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
+    defaultConfig {
+        applicationId "com.pay.poriot"
+        minSdkVersion ANDROID_BUILD_MINI_SDK_VERSION as int
+        targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //  resConfigs "zh"
+        vectorDrawables.useSupportLibrary = true
+
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        signingConfig signingConfigs.debug
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+
+    }
+
+    dexOptions {
+        jumboMode = true //防止由于字符串增多导致force-jumbol，导致更多的变更。
+    }
+    buildTypes {
+        debug {
+            def isDef = false
+            minifyEnabled isDef
+            shrinkResources isDef // 去除无用的资源
+            zipAlignEnabled isDef
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "int", "DEFAULT_TIMEOUT", "60"
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false // 去除无用的资源
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "int", "DEFAULT_TIMEOUT", "10"
+        }
+    }
+    lintOptions {
+        disable "ResourceType"
+    }
+
+    android.applicationVariants.all { variant ->
+        /*为apk自动替换生成新名字，格式如： ac-release-true-v1.0.0.apk*/
+        variant.outputs.all {
+            outputFileName = "poriot_${variant.name}_${IS_RELEASE_MODE}_${variant.versionCode}_v${variant.versionName}.apk"
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api fileTree(include: ['*.aar'], dir: 'libs')
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    api 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    api 'androidx.viewpager2:viewpager2:1.0.0'
+    //事件总线
+    api 'org.greenrobot:eventbus:3.1.1'
+    // Rx ReactiveX
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.6'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'io.reactivex:rxjava:1.3.8'
+    api 'com.tbruyelle.rxpermissions:rxpermissions:0.9.3'
+    api 'android.arch.lifecycle:extensions:1.1.1'
+    //glide图片处理框架
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    api 'jp.wasabeef:glide-transformations:4.1.0'
+    api 'com.binaryfork:spanny:1.0.4'
+    //Retrofit
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    // Gson converter
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    // Okhttp
+    api 'com.squareup.okhttp3:okhttp:3.8.1'
+    //以太坊钱包
+    api 'org.web3j:core:4.2.0-android'
+    api 'org.bitcoinj:bitcoinj-core:0.14.7'
+    //数据库
+    api 'org.greenrobot:greendao:3.3.0' // add library
+    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'
+    api  'com.scwang.smart:refresh-header-classics:2.0.3'
+    api  'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+    api 'com.shizhefei:ViewPagerIndicator:1.1.6'
+    api 'com.github.li-xiaojun:XPopup:2.5.17'
+}
+greendao {
+    //数据库的schema版本，也可以理解为数据库版本号
+    schemaVersion 1
+    //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径。
+    daoPackage 'com.example.mygreendao.greendao'
+    //设置DaoMaster、DaoSession、Dao目录
+    targetGenDir 'src/main/java'
+}

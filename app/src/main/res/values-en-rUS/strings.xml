@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">PayPort</string>
+    <string name="tab_one">wallet</string>
+    <string name="tab_two">discover</string>
+    <string name="tab_three">my</string>
+
+    <string name="create_wallet">Create Wallet</string>
+    <string name="import_wallet">Import Wallet</string>
+    <string name="change_password">Change Password</string>
+    <string name="wallet_name">wallet name</string>
+    <string name="wallet_address">Wallet address</string>
+    <string name="set_password">set password</string>
+    <string name="wallet_password">wallet password</string>
+    <string name="confirm_wallet_password">Confirm wallet password</string>
+
+    <string name="transfer_accounts">transfer accounts</string>
+    <string name="collection">Collection</string>
+
+
+    <string name="edit_input_wallet_name">please enter wallet name</string>
+    <string name="edit_input_wallet_password">please enter your wallet password</string>
+    <string name="wallet_name_repeat">duplicate wallet name</string>
+    <string name="creating_wallet_tip">Create wallet…</string>
+    <string name="import_wallet_tip">Import into Wallet…</string>
+    <string name="wallet_created_successfully">Wallet created successfully</string>
+    <string name="edit_input_wallet_password1">please enter your wallet password again</string>
+    <string name="edit_input_wallet_password2">the passwords entered twice are inconsistent</string>
+    <string name="edit_sure_wallet_password">please confirm the wallet password</string>
+    <string name="backups_tip">backup immediately after creation</string>
+    <string name="network_is_not_available">network link failed! please check the network</string>
+    <string name="search">search</string>
+    <string name="recommended_app">Recommended application</string>
+    <string name="security_information">security information</string>
+    <string name="popular_tokens">Popular tokens</string>
+    <string name="cny">¥</string>
+    <string name="wallet_by_mnemonic">Please check your mnemonics</string>
+    <string name="wallet_already_exist">Wallet already exists</string>
+    <string name="wallet_keystore_invalid">keystore Invalid file</string>
+    <string name="success_imported_wallet">Successfully imported Wallet</string>
+    <string name="fail_imported_wallet">Failed to import Wallet</string>
+    <string name="enter_private_key">Please paste or enter the private key here</string>
+    <string name="enter_mnemonic_words">Mnemonics, separated by spaces</string>
+    <string name="enter_keystore">Please paste the contents of the key store file</string>
+    <string name="invalid_private_key">Invalid private key</string>
+    <string name="change_name">change name</string>
+    <string name="export_private_key">Export private key</string>
+    <string name="export_keystore">Export Keystore</string>
+
+    <string name="creat_wallet_tip">When creating a poriot wallet, be sure to make a backup; Support \ n importing poriot wallet through keystore, private key and mnemonics.</string>
+
+    <string name="bridge_assets">Bridge assets</string>
+    <string name="to">to</string>
+    <string name="quantity">quantity</string>
+    <string name="available_balance">Available balance：</string>
+    <string name="please_enter_quantity">Please enter quantity</string>
+    <string name="service_charge">Service Charge：</string>
+    <string name="notarization_fee">Notarization fee：</string>
+    <string name="grant">grant authorization</string>
+    <string name="bridge_tip">Tip: the cross chain bridge belongs to the trial operation stage!</string>
+
+
+    <string name="forward">Cross out</string>
+    <string name="step">Cross into</string>
+    <string name="assets">assets</string>
+
+    <string name="wallet_indicator_mnemonic">Mnemonic words</string>
+    <string name="wallet_indicator_official">KeyStore</string>
+    <string name="wallet_indicator_private_key">Private key</string>
+
+
+    <!--我的-->
+    <string name="wallet_manager">Manage Wallet</string>
+    <string name="backup_mnemonics">Backup Mnemonics</string>
+    <string name="network_settings">Network settings</string>
+    <string name="language_settings">Language settings</string>
+    <string name="share">share</string>
+    <string name="notice">Notice</string>
+    <string name="clean_cache">Clean cache</string>
+    <string name="about">About us</string>
+    <string name="confirm">confirm</string>
+    <string name="determine">determine</string>
+    <string name="old_password">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_password">Confirm new password</string>
+    <string name="input_old_password">Enter old password</string>
+    <string name="input_new_password">Enter new password</string>
+    <string name="input_confirm_new_password">Enter the new password again</string>
+    <string name="old_password_error">Original password error</string>
+    <string name="modify_password_success">Password modified successfully</string>
+    <string name="ethereum_net">Ethereum Main Net</string>
+    <string name="poriot_net">Poriot Network</string>
+    <string name="bsc_net">BSC</string>
+    <string name="huobi_net">Huobi Eco Chain Main Net</string>
+    <string name="tron_net">Tron</string>
+    <string name="infromation">information</string>
+    <string name="network_terminology">Network Terminology</string>
+    <string name="chain_identification">Chain Identification</string>
+    <string name="symbol">Symbol</string>
+    <string name="net_info_tip">Insecure network providers may falsely report the status of blockchain and record your network activities, and only give you trusted networks</string>
+    <string name="chinese">Chinese (Simplified)</string>
+    <string name="english">english</string>
+    <string name="save">Save to album</string>
+    <string name="cache_cleared">Cache cleared</string>
+    <string name="no_message">No message</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_3"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/wallet_manager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/backup_mnemonic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/change_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/network_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/language_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/clean_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <com.pay.poriot.ui.widget.MyItemView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">PayPort</string>
+    <string name="tab_one">钱包</string>
+    <string name="tab_two">发现</string>
+    <string name="tab_three">我的</string>
+
+    <string name="create_wallet">创建钱包</string>
+    <string name="import_wallet">导入钱包</string>
+    <string name="change_password">修改密码</string>
+
+    <string name="wallet_name">钱包名称</string>
+    <string name="wallet_address">钱包地址</string>
+    <string name="set_password">设置密码</string>
+    <string name="wallet_password">钱包密码</string>
+    <string name="confirm_wallet_password">确认钱包密码</string>
+
+    <string name="forward">跨出</string>
+    <string name="step">跨入</string>
+    <string name="assets">资产</string>
+
+    <string name="transfer_accounts">转账</string>
+    <string name="collection">收款</string>
+
+    <string name="popular_tokens">热门代币</string>
+    <string name="security_information">安全信息</string>
+
+    <string name="change_name">更改名称</string>
+    <string name="export_private_key">导出私钥</string>
+    <string name="export_keystore">导出Keystore</string>
+    <string name="creat_wallet_tip">创建Poriot钱包，创建后请务必做好备份;支持通过keystore、私钥、助记词导入Poriot钱包。</string>
+
+
+    <string name="bridge_assets">桥上资产</string>
+    <string name="to">至</string>
+    <string name="quantity">数量</string>
+    <string name="available_balance">可用余额：</string>
+    <string name="please_enter_quantity">请输入数量</string>
+    <string name="service_charge">手续费：</string>
+    <string name="notarization_fee">公证费：</string>
+    <string name="grant">授权</string>
+    <string name="bridge_tip">提示：跨链桥属于试运行阶段！</string>
+
+    <string name="enter_private_key">请在此处粘贴或输入私钥</string>
+    <string name="enter_mnemonic_words">助记词，按空格分隔</string>
+    <string name="enter_keystore">请粘贴密钥存储文件的内容</string>
+    <string name="invalid_private_key">无效的私钥</string>
+    <string name="success_imported_wallet">导入钱包成功</string>
+    <string name="fail_imported_wallet">导入钱包失败</string>
+    <string name="wallet_by_mnemonic">请检查您的助记词</string>
+    <string name="wallet_keystore_invalid">keystore文件无效</string>
+    <string name="cny">¥</string>
+
+    <string name="edit_input_wallet_name">请输入钱包名称</string>
+    <string name="wallet_name_repeat">钱包名称重复</string>
+    <string name="wallet_already_exist">钱包已存在</string>
+    <string name="creating_wallet_tip">创建钱包中…</string>
+    <string name="import_wallet_tip">导入钱包中…</string>
+
+    <string name="wallet_created_successfully">创建钱包成功</string>
+    <string name="edit_input_wallet_password">请输入钱包密码</string>
+    <string name="edit_input_wallet_password1">请再次输入钱包密码</string>
+    <string name="edit_input_wallet_password2">两次输入的密码不一致</string>
+    <string name="edit_sure_wallet_password">请确认钱包密码</string>
+    <string name="backups_tip">创建完成后，立即备份</string>
+    <string name="network_is_not_available">网络链接失败！请检查网络</string>
+    <string name="search">搜索</string>
+    <string name="recommended_app">推荐应用</string>
+
+
+    <string name="wallet_indicator_mnemonic">助记词</string>
+    <string name="wallet_indicator_official">KeyStore</string>
+    <string name="wallet_indicator_private_key">私钥</string>
+
+    <!--我的-->
+    <string name="wallet_manager">管理钱包</string>
+    <string name="backup_mnemonics">备份助记词</string>
+    <string name="network_settings">网络设置</string>
+    <string name="language_settings">语言设置</string>
+    <string name="share">分享</string>
+    <string name="notice">公告</string>
+    <string name="clean_cache">清理缓存</string>
+    <string name="about">关于我们</string>
+    <string name="confirm">确认</string>
+    <string name="determine">确定</string>
+    <string name="old_password">旧密码</string>
+    <string name="new_password">新密码</string>
+    <string name="confirm_password">确认新密码</string>
+    <string name="input_old_password">请输入旧密码</string>
+    <string name="input_new_password">请输入新密码</string>
+    <string name="input_confirm_new_password">请输入确认新密码</string>
+    <string name="old_password_error">原密码错误</string>
+    <string name="modify_password_success">修改密码成功</string>
+    <string name="ethereum_net">Ethereum Main Net</string>
+    <string name="poriot_net">Poriot Network</string>
+    <string name="bsc_net">BSC</string>
+    <string name="huobi_net">Huobi Eco Chain Main Net</string>
+    <string name="tron_net">Tron</string>
+    <string name="infromation">信息</string>
+    <string name="network_terminology">网络术语</string>
+    <string name="chain_identification">链标识</string>
+    <string name="symbol">符号</string>
+    <string name="net_info_tip">不安全的网络提供商可能会谎报区块链的状态，并记录您的网络活动，只给你信任的网络</string>
+    <string name="chinese">中文（简体）</string>
+    <string name="english">英文</string>
+    <string name="save">保存至相册</string>
+    <string name="cache_cleared">已清除缓存</string>
+    <string name="no_message">暂无消息</string>
+</resources>
