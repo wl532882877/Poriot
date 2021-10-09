@@ -13,11 +13,17 @@
     <string name="set_password">set password</string>
     <string name="wallet_password">wallet password</string>
     <string name="confirm_wallet_password">Confirm wallet password</string>
-
+    <string name="add_wallet">Add Wallet</string>
     <string name="transfer_accounts">transfer accounts</string>
     <string name="collection">Collection</string>
+    <string name="wallet_password_error">Wallet password error</string>
 
+    <string name="all">whole</string>
+    <string name="other">other</string>
 
+    <string name="backup_tip">After authentication, the private key information will be displayed. Please keep it properly.</string>
+
+    <string name="exit_tips">Press again to exit the program</string>
     <string name="edit_input_wallet_name">please enter wallet name</string>
     <string name="edit_input_wallet_password">please enter your wallet password</string>
     <string name="wallet_name_repeat">duplicate wallet name</string>
@@ -46,7 +52,11 @@
     <string name="change_name">change name</string>
     <string name="export_private_key">Export private key</string>
     <string name="export_keystore">Export Keystore</string>
+    <string name="copy_private_key">Copy private key</string>
+    <string name="copy_mnemonic">Copy mnemonics</string>
+    <string name="copy_key_store">Copy keystore</string>
 
+    <string name="asset_information">Asset information</string>
     <string name="creat_wallet_tip">When creating a poriot wallet, be sure to make a backup; Support \ n importing poriot wallet through keystore, private key and mnemonics.</string>
 
     <string name="bridge_assets">Bridge assets</string>
@@ -58,28 +68,53 @@
     <string name="notarization_fee">Notarization fee：</string>
     <string name="grant">grant authorization</string>
     <string name="bridge_tip">Tip: the cross chain bridge belongs to the trial operation stage!</string>
-
-
+    <string name="delete_account">Delete this account</string>
+    <string name="private_key_info">Private key information</string>
+    <string name="success_modify_wallet_name">Wallet name modified successfully</string>
+    <string name="failed_modify_wallet_name">Failed to modify wallet name</string>
     <string name="forward">Cross out</string>
     <string name="step">Cross into</string>
     <string name="assets">assets</string>
+
+    <string name="in_circulation">In circulation</string>
+    <string name="asset_name">Asset name</string>
+    <string name="contract_address">Contract address</string>
+    <string name="accuracy">accuracy</string>
+    <string name="start_time">start time</string>
+    <string name="select_address">Select address</string>
+    <string name="enter_address">Please enter or paste the address</string>
+    <string name="local_address">Local address</string>
 
     <string name="wallet_indicator_mnemonic">Mnemonic words</string>
     <string name="wallet_indicator_official">KeyStore</string>
     <string name="wallet_indicator_private_key">Private key</string>
 
+    <string name="click_show_key">Click to display the private key</string>
+    <string name="click_show_mnemonic">Click to display mnemonics</string>
+    <string name="click_show_key_store">Click to display keystore</string>
 
+
+    <string name="share_tip">Invite friends to use payport together~</string>
+    <string name="share_tip1">Method 1: obtain the download page through QR code and install payport</string>
+    <string name="share_tip2">Method 2: send the download page link to your friends</string>
+    <string name="share_tip3">I am using payport to manage my digital assets and invite you to use it together</string>
+
+    <string name="click_copy">(Click Copy)</string>
+    <string name="qrcode_copy_success">Copy succeeded</string>
+    <string name="saved_successfully">saved successfully</string>
     <!--我的-->
     <string name="wallet_manager">Manage Wallet</string>
     <string name="backup_mnemonics">Backup Mnemonics</string>
     <string name="network_settings">Network settings</string>
     <string name="language_settings">Language settings</string>
-    <string name="share">share</string>
+    <string name="share">Invite friends</string>
     <string name="notice">Notice</string>
     <string name="clean_cache">Clean cache</string>
     <string name="about">About us</string>
     <string name="confirm">confirm</string>
     <string name="determine">determine</string>
+    <string name="complete">complete</string>
+
     <string name="old_password">Old password</string>
     <string name="new_password">New password</string>
     <string name="confirm_password">Confirm new password</string>
@@ -101,6 +136,10 @@
     <string name="chinese">Chinese (Simplified)</string>
     <string name="english">english</string>
     <string name="save">Save to album</string>
+    <string name="share_friends">Share with friends</string>
     <string name="cache_cleared">Cache cleared</string>
     <string name="no_message">No message</string>
+
+    <string name="turn_on_flash">\n The environment is too dark, please turn on the flash</string>
+    <string name="error_opening_camera">Error opening camera</string>
 </resources>

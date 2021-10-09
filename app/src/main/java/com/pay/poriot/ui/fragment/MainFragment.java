@@ -20,21 +20,22 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.lxj.xpopup.XPopup;
 import com.pay.poriot.R;
 import com.pay.poriot.base.BaseFragment;
+import com.pay.poriot.base.IPresenter;
 import com.pay.poriot.dao.ETHWallet;
 import com.pay.poriot.dialog.PagerBottomPopup;
 import com.pay.poriot.entity.Ticker;
 import com.pay.poriot.entity.Token;
 import com.pay.poriot.entity.TokenInfo;
+import com.pay.poriot.entity.TokenItem;
 import com.pay.poriot.interact.FetchWalletInteract;
 import com.pay.poriot.listener.IPageChangeListener;
-import com.pay.poriot.presenter.MainPre;
 import com.pay.poriot.ui.activity.CrossPaymentActivity;
 import com.pay.poriot.ui.activity.PopularTokensActivity;
 import com.pay.poriot.ui.activity.WalletDetailActivity;
 import com.pay.poriot.ui.adapter.HomeBannerAdapter;
-import com.pay.poriot.ui.view.MainView;
 import com.pay.poriot.ui.widget.AutoScrollViewPager;
 import com.pay.poriot.util.BalanceUtils;
+import com.pay.poriot.util.WalletDaoUtils;
 import com.pay.poriot.viewmodel.TokensViewModel;
 import com.pay.poriot.viewmodel.TokensViewModelFactory;
 import com.scwang.smart.refresh.header.ClassicsHeader;
@@ -53,7 +54,7 @@ import butterknife.ButterKnife;
 /**
  * 钱包首页
  */
-public class MainFragment extends BaseFragment<MainPre> implements View.OnClickListener, MainView {
+public class MainFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.refrsh_wallet)
     SmartRefreshLayout refreshWallet;
     @BindView(R.id.recy_wallet)
@@ -80,10 +81,6 @@ public class MainFragment extends BaseFragment<MainPre> implements View.OnClickL
         return new MainFragment();
     }
 
-    @Override
-    protected MainPre getPresenter() {
-        return new MainPre(getActivity(), this);
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -96,10 +93,11 @@ public class MainFragment extends BaseFragment<MainPre> implements View.OnClickL
     }
 
     private void initData() {
-        mItems.add(new TokenItem(new TokenInfo("0xB8c77482e45F1F44dE1745F52C74426C631bDD52", "ZKT", "ZKT Token", 0), true, R.mipmap.wallet_icon));
-        mItems.add(new TokenItem(new TokenInfo("0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", "ETH-ZK", "ETH-ZK", 0), true, R.mipmap.bg_eth_zk));
-        mItems.add(new TokenItem(new TokenInfo("0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2", "USTD-ZK", "USTD-ZK", 0), true, R.mipmap.bg_ustd_zk));
-        mItems.add(new TokenItem(new TokenInfo("0xd850942ef8811f2a866692a623011bde52a462c1", "ZK", "ZK", 0), false, R.mipmap.wallet_icon));
+        String address = WalletDaoUtils.getCurrent().getAddress();
+        mItems.add(new TokenItem(new TokenInfo(address, "ZKT", "ZKT Token", 0), true, R.mipmap.wallet_icon));
+        mItems.add(new TokenItem(new TokenInfo(address, "ETH-ZK", "ETH-ZK", 0), true, R.mipmap.bg_eth_zk));
+        mItems.add(new TokenItem(new TokenInfo(address, "USTD-ZK", "USTD-ZK", 0), true, R.mipmap.bg_ustd_zk));
+        mItems.add(new TokenItem(new TokenInfo(address, "ZK", "ZK", 0), false, R.mipmap.wallet_icon));
     }
 
     private void initVariables() {
@@ -177,22 +175,10 @@ public class MainFragment extends BaseFragment<MainPre> implements View.OnClickL
                 List<TokenItem> tokenItems = adapter.getData();
                 WalletDetailActivity.startActivity(getContext(),
                         tokenItems.get(position).tokenInfo.name,
-                        tokenItems.get(position).tokenInfo.address);
+                        tokenItems.get(position).tokenInfo.address,
+                        tokenItems.get(position).tokenInfo.symbol);
             }
         });
-    }
-
-
-    public static class TokenItem {
-        public final TokenInfo tokenInfo;
-        public boolean added;
-        public int iconId;
-
-        public TokenItem(TokenInfo tokenInfo, boolean added, int id) {
-            this.tokenInfo = tokenInfo;
-            this.added = added;
-            this.iconId = id;
-        }
     }
 
 
@@ -230,6 +216,11 @@ public class MainFragment extends BaseFragment<MainPre> implements View.OnClickL
         }
     }
 
+    @Override
+    protected IPresenter getPresenter() {
+        return null;
+    }
+
     public class WalletAdapter extends BaseQuickAdapter<TokenItem, BaseViewHolder> {
         public WalletAdapter() {
             super(R.layout.item_home_list);
@@ -237,11 +228,14 @@ public class MainFragment extends BaseFragment<MainPre> implements View.OnClickL
 
         @Override
         protected void convert(BaseViewHolder viewHolder, TokenItem bean) {
+            viewHolder.setImageResource(R.id.iv_icon, bean.iconId)
+                    .setText(R.id.tv_name, bean.tokenInfo.name)
+                    .setText(R.id.tv_currency, bean.tokenInfo.symbol)
+                    .setText(R.id.tv_price, bean.tokenInfo.decimals + "");
             if (bean.added) {
-                viewHolder.setImageResource(R.id.iv_icon, bean.iconId)
-                        .setText(R.id.tv_name, bean.tokenInfo.name)
-                        .setText(R.id.tv_currency, bean.tokenInfo.symbol)
-                        .setText(R.id.tv_price, bean.tokenInfo.decimals + "");
+                viewHolder.itemView.setVisibility(View.VISIBLE);
+            } else {
+                viewHolder.itemView.setVisibility(View.GONE);
             }
         }
     }

@@ -14,6 +14,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.pay.poriot.R;
 import com.pay.poriot.dao.ETHWallet;
 import com.pay.poriot.ui.activity.QRCodeShareActivity;
+import com.pay.poriot.ui.activity.QRCollectionActivity;
 import com.pay.poriot.ui.activity.SecurityInfoActivity;
 
 import java.util.List;
@@ -61,7 +62,7 @@ public class HomeBannerAdapter extends PagerAdapter {
         View view = LayoutInflater.from(mActivity).inflate(R.layout.view_home_wallet, null);
         view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         LinearLayout mIvSetting = view.findViewById(R.id.wallet_setting);
-        ImageView mIvCode = view.findViewById(R.id.wallet_code);
+        LinearLayout mIvCode = view.findViewById(R.id.wallet_code);
         TextView mTvName = view.findViewById(R.id.wallet_name);
         TextView mTvAddress = view.findViewById(R.id.wallet_address);
 
@@ -73,7 +74,7 @@ public class HomeBannerAdapter extends PagerAdapter {
             SecurityInfoActivity.startActivity(mActivity, bean.getName(), bean.getAddress());
         });
         mIvCode.setOnClickListener(v -> {
-            QRCodeShareActivity.startActivity(mActivity);
+            QRCollectionActivity.startActivity(mActivity,bean.getName(), bean.getAddress());
         });
         container.addView(view);
         return view;

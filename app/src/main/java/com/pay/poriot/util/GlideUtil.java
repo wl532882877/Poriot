@@ -1,20 +1,26 @@
 package com.pay.poriot.util;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.ImageView;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.pay.poriot.base.BaseApplication;
 
@@ -152,6 +158,51 @@ public class GlideUtil {
 
     public static void clearMemory(Activity mActivity) {
         Glide.get(mActivity).clearMemory();
+    }
+
+    /**
+     * 加载Bitmap
+     *
+     * @param imageView
+     * @param bitmap
+     * @param defaultImage
+     */
+    public static void loadBmpImage(ImageView imageView, Bitmap bitmap, int defaultImage) {
+        loadImage(imageView, bitmap, defaultImage, -1);
+    }
+
+    @SuppressLint("CheckResult")
+    private static void loadImage(final ImageView view, Object img, @DrawableRes int defaultImage, @DrawableRes int errorImage) {
+        if (view == null) {
+            return;
+        }
+        Context context = view.getContext();
+        if (context instanceof Activity) {
+            if (((Activity) context).isFinishing()) {
+                return;
+            }
+        }
+        RequestOptions options = new RequestOptions().centerCrop();
+        if (defaultImage != -1) {
+            options.placeholder(defaultImage);
+        }
+        if (errorImage != -1) {
+            options.error(errorImage);
+        }
+        Glide.with(context)
+                .load(img)
+                .apply(options)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        return false;
+                    }
+                }).into(view);
     }
 
     public static void loadBitmap(Context context, String url, CustomTarget<Drawable> target, int width, int height) {

@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import com.lxj.xpopup.XPopup;
 import com.pay.poriot.R;
 import com.pay.poriot.base.BaseFragment;
+import com.pay.poriot.dialog.BackupMneBottomPopup;
 import com.pay.poriot.dialog.PagerBottomPopup;
 import com.pay.poriot.presenter.MinePre;
 import com.pay.poriot.ui.activity.AboutActivity;
@@ -93,7 +94,13 @@ public class MineFragment extends BaseFragment<MinePre> implements MineView, MyI
                         .show();
                 break;
             case 2:
-
+                new XPopup.Builder(getContext())
+                        .isViewMode(true)
+                        .autoOpenSoftInput(true)
+                        .moveUpToKeyboard(false)
+                        .enableDrag(true)
+                        .asCustom(new BackupMneBottomPopup(getContext()))
+                        .show();
                 break;
             case 3:
                 ModifyPasswordActivity.startActivity(getActivity());

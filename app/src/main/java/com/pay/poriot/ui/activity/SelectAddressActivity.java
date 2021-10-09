@@ -4,32 +4,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.pay.poriot.R;
 import com.pay.poriot.base.BaseActivity;
-import com.pay.poriot.presenter.AboutPre;
-import com.pay.poriot.ui.view.AboutView;
-import com.pay.poriot.util.DensityUtils;
-import com.pay.poriot.util.PackageUtil;
+import com.pay.poriot.base.IPresenter;
 import com.pay.poriot.util.ViewUtil;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 关于我们
+ * 选择地址
  */
-public class AboutActivity extends BaseActivity<AboutPre> implements AboutView, View.OnClickListener {
-
-    @BindView(R.id.iv_about)
-    ImageView mIvAbout;
-    @BindView(R.id.tv_version)
-    TextView mTvVersion;
+public class SelectAddressActivity extends BaseActivity implements View.OnClickListener{
+    private static final int QRCODE_SCANNER_REQUEST = 1100;
+    @Override
+    protected IPresenter getPresenter() {
+        return null;
+    }
 
     public static void startActivity(Context activity) {
-        Intent intent = new Intent(activity, AboutActivity.class);
+        Intent intent = new Intent(activity, SelectAddressActivity.class);
         ViewUtil.startActivity(activity, intent);
         ViewUtil.right2LeftIn(activity);
     }
@@ -37,7 +29,7 @@ public class AboutActivity extends BaseActivity<AboutPre> implements AboutView, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_select_address);
         initVariable();
         initViews();
     }
@@ -45,18 +37,12 @@ public class AboutActivity extends BaseActivity<AboutPre> implements AboutView, 
     private void initVariable() {
         ButterKnife.bind(this);
     }
-    @Override
-    protected AboutPre getPresenter() {
-        return new AboutPre(this,this);
-    }
 
     private void initViews() {
         super.initTitle();
-        setTitleText(getString(R.string.about));
+        setTitleText(getString(R.string.select_address));
         setTitleLeftIcon(R.drawable.btn_back_black, this);
-        measure(mIvAbout, 288, 288);
-        DensityUtils.setMargins(mIvAbout, 0, 308, 0, 30);
-        mTvVersion.setText("v".concat(PackageUtil.getVersionName()));
+        setTitleRightIcon(R.mipmap.bg_scan,this);
     }
 
     @Override
@@ -65,14 +51,21 @@ public class AboutActivity extends BaseActivity<AboutPre> implements AboutView, 
             case R.id.ll_title_left:
                 finish();
                 break;
-            default:
+            case R.id.ll_title_right:
+                Intent intent = new Intent(mContext, QRCodeScannerActivity.class);
+                startActivityForResult(intent, QRCODE_SCANNER_REQUEST);
                 break;
         }
     }
 
+
     @Override
-    public void finish() {
-        super.finish();
-        ViewUtil.left2RightOut(this);
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == QRCODE_SCANNER_REQUEST) {
+            if (data != null) {
+                String scanResult = data.getStringExtra("scan_result");
+            }
+        }
     }
 }

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fafafa"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/wallet_indicator_private_key"
+                android:textColor="@color/color_ff"
+                android:textSize="@dimen/font_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_white5_shape">
+
+                <TextView
+                    android:id="@+id/click_show_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="@string/click_show_key" />
+
+                <TextView
+                    android:id="@+id/tv_private_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:gravity="center|left"
+                    android:textColor="@color/color_ff"
+                    android:textSize="@dimen/font_16"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bt_copy_private_key"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_blue_168_shape"
+                android:onClick="onClick"
+                android:text="@string/copy_private_key"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/wallet_indicator_mnemonic"
+                android:textColor="@color/color_ff"
+                android:textSize="@dimen/font_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_white5_shape">
+
+                <TextView
+                    android:id="@+id/click_show_mnemonic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="@string/click_show_mnemonic" />
+
+                <TextView
+                    android:id="@+id/tv_mnemonic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:gravity="center|left"
+                    android:textColor="@color/color_ff"
+                    android:textSize="@dimen/font_16"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bt_copy_mnemonic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_blue_168_shape"
+                android:onClick="onClick"
+                android:text="@string/copy_mnemonic"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/wallet_indicator_official"
+                android:textColor="@color/color_ff"
+                android:textSize="@dimen/font_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_white5_shape">
+
+                <TextView
+                    android:id="@+id/click_show_key_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="@string/click_show_key_store" />
+
+                <TextView
+                    android:id="@+id/tv_key_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:gravity="center|left"
+                    android:textColor="@color/color_ff"
+                    android:textSize="@dimen/font_16"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bt_copy_key_store"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/bg_blue_168_shape"
+                android:onClick="onClick"
+                android:text="@string/copy_key_store"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

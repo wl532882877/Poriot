@@ -23,13 +23,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
-    private static final long EXIT_APP_TIME = 2000;
+    private long currentBackPressedTime = 0;
+    private static final int BACK_PRESSED_INTERVAL = 2000;
     @BindView(R.id.rg_tab)
     RadioGroup rgTab;
     @BindView(R.id.vp_fragment)
     ViewPager2 vpFragment;
-    private long mExitTime;
-
     public static void startActivity(Context activity) {
         Intent intent = new Intent(activity, MainActivity.class);
         ViewUtil.startActivity(activity, intent);
@@ -134,22 +133,21 @@ public class MainActivity extends BaseActivity {
         recreate();
     }
 
+
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-            if (System.currentTimeMillis() - mExitTime > EXIT_APP_TIME) {
-                mExitTime = System.currentTimeMillis();
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN
+                && event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            if (System.currentTimeMillis() - currentBackPressedTime > BACK_PRESSED_INTERVAL) {
+                currentBackPressedTime = System.currentTimeMillis();
+                showToast(getString(R.string.exit_tips));
+                return true;
             } else {
                 finish();
             }
+        } else if (event.getKeyCode() == KeyEvent.KEYCODE_MENU) {
             return true;
         }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
-    public void finish() {
-        super.finish();
-        ViewUtil.left2RightOut(this);
+        return super.dispatchKeyEvent(event);
     }
 }

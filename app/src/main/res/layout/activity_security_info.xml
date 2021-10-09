@@ -134,4 +134,19 @@
             android:layout_alignParentTop="true"
             android:background="@color/color_2" />
     </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/bt_delete_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_47"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/bg_blue_168_shape"
+        android:onClick="onClick"
+        android:text="@string/delete_account"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_15" />
 </LinearLayout>

@@ -1,20 +1,16 @@
 package com.pay.poriot.dialog;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lxj.xpopup.XPopup;
@@ -26,7 +22,6 @@ import com.pay.poriot.entity.Tab;
 import com.pay.poriot.interact.FetchWalletInteract;
 import com.pay.poriot.viewmodel.TokensViewModel;
 import com.pay.poriot.viewmodel.TokensViewModelFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,6 +79,7 @@ public class PagerBottomPopup extends BottomPopupView {
                 List<ETHWallet> wallet = adapter.getData();
                 tokensViewModel.updateDefaultWallet(wallet.get(position).getId());
                 walletAdapter.notifyDataSetChanged();
+                dismiss();
             }
         });
         tabAdapter = new TabAdapter();

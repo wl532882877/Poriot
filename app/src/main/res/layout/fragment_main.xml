@@ -60,12 +60,12 @@
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/refrsh_wallet"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color_fafafa">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_wallet"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never" />
+            android:layout_height="wrap_content" />
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 </LinearLayout>

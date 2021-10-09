@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -8,74 +9,90 @@
 
     <include layout="@layout/view_title_layout" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_30"
-        android:src="@mipmap/wallet_icon" />
-
-    <TextView
-        android:id="@+id/wallet_blance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_15"
-        android:inputType="number"
-        android:singleLine="true"
-        android:text="0"
-        android:textColor="@color/color_ff"
-        android:textSize="@dimen/font_20"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/wallet_address"
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_30"
-        android:ellipsize="middle"
-        android:singleLine="true"
-        android:textColor="@color/color_2"
-        android:textSize="@dimen/font_13" />
-
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_40"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/bt_transfer_account"
-            android:layout_width="@dimen/dp_0"
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:elevation="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                android:src="@mipmap/wallet_icon" />
+
+            <TextView
+                android:id="@+id/wallet_blance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="@color/color_ff"
+                android:textSize="@dimen/font_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/wallet_address"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textColor="@color/color_2"
+                android:textSize="@dimen/font_13" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_35"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_transfer_account"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_blue_shape"
+                    android:onClick="onClick"
+                    android:text="@string/transfer_accounts"
+                    android:textColor="@color/color_168"
+                    android:textSize="@dimen/font_15" />
+
+                <Button
+                    android:id="@+id/bt_collection"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_blue_30_shape"
+                    android:onClick="onClick"
+                    android:text="@string/collection"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <com.shizhefei.view.indicator.ScrollIndicatorView
+                android:id="@+id/indicator_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_50" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_load_wallet"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/bg_blue_shape"
-            android:onClick="onClick"
-            android:text="@string/transfer_accounts"
-            android:textColor="@color/color_168"
-            android:textSize="@dimen/font_15" />
-
-        <Button
-            android:id="@+id/bt_collection"
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/dp_15"
-            android:layout_weight="1"
-            android:background="@drawable/bg_blue_30_shape"
-            android:onClick="onClick"
-            android:text="@string/collection"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_15" />
-    </LinearLayout>
-
-    <com.shizhefei.view.indicator.ScrollIndicatorView
-        android:id="@+id/indicator_view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
-        android:layout_marginTop="@dimen/dp_50" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp_load_wallet"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

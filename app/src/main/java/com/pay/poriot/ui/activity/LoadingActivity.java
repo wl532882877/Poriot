@@ -31,8 +31,10 @@ public class LoadingActivity extends BaseActivity {
     public void onWalltes(List<ETHWallet> ethWallets) {
         if (ethWallets.size() == 0) {
             GuideActivity.startActivity(LoadingActivity.this);
+            finish();
         } else {
             MainActivity.startActivity(LoadingActivity.this);
+            finish();
         }
     }
 

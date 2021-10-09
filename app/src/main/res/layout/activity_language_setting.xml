@@ -24,7 +24,7 @@
 
             <ImageView
                 android:id="@+id/cn"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dp_20"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/bg_cn" />
@@ -37,12 +37,12 @@
                 android:layout_toRightOf="@+id/cn"
                 android:text="@string/chinese"
                 android:textColor="@color/color_ff"
-                android:textSize="@dimen/font_16" />
+                android:textSize="@dimen/font_14" />
 
             <CheckBox
                 android:id="@+id/cb_cn"
-                android:layout_width="@dimen/dp_30"
-                android:layout_height="@dimen/dp_30"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:button="@mipmap/bg_check"/>
@@ -65,7 +65,7 @@
 
             <ImageView
                 android:id="@+id/en"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dp_20"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/bg_en" />
@@ -78,12 +78,12 @@
                 android:layout_toRightOf="@+id/en"
                 android:text="@string/english"
                 android:textColor="@color/color_ff"
-                android:textSize="@dimen/font_16" />
+                android:textSize="@dimen/font_14" />
 
             <CheckBox
                 android:id="@+id/cb_en"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:button="@mipmap/bg_check"

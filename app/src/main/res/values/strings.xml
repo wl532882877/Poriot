@@ -14,6 +14,7 @@
     <string name="set_password">设置密码</string>
     <string name="wallet_password">钱包密码</string>
     <string name="confirm_wallet_password">确认钱包密码</string>
+    <string name="wallet_password_error">钱包密码错误</string>
 
     <string name="forward">跨出</string>
     <string name="step">跨入</string>
@@ -22,14 +23,30 @@
     <string name="transfer_accounts">转账</string>
     <string name="collection">收款</string>
 
+    <string name="asset_information">资产信息</string>
+    <string name="in_circulation">流通中</string>
+    <string name="asset_name">资产名称</string>
+    <string name="contract_address">合约地址</string>
+    <string name="accuracy">准确性</string>
+    <string name="start_time">开始时间</string>
+
     <string name="popular_tokens">热门代币</string>
     <string name="security_information">安全信息</string>
+    <string name="select_address">选择地址</string>
+    <string name="local_address">本地地址</string>
 
     <string name="change_name">更改名称</string>
     <string name="export_private_key">导出私钥</string>
+    <string name="copy_private_key">复制私钥</string>
+    <string name="copy_mnemonic">复制助记词</string>
+    <string name="copy_key_store">复制KeyStore</string>
+    <string name="delete_account">删除此账户</string>
+
+    <string name="private_key_info">私钥信息</string>
+
     <string name="export_keystore">导出Keystore</string>
     <string name="creat_wallet_tip">创建Poriot钱包，创建后请务必做好备份;支持通过keystore、私钥、助记词导入Poriot钱包。</string>
-
+    <string name="exit_tips">再按一次退出程序</string>
 
     <string name="bridge_assets">桥上资产</string>
     <string name="to">至</string>
@@ -56,6 +73,7 @@
     <string name="wallet_already_exist">钱包已存在</string>
     <string name="creating_wallet_tip">创建钱包中…</string>
     <string name="import_wallet_tip">导入钱包中…</string>
+    <string name="add_wallet">添加钱包</string>
 
     <string name="wallet_created_successfully">创建钱包成功</string>
     <string name="edit_input_wallet_password">请输入钱包密码</string>
@@ -72,17 +90,32 @@
     <string name="wallet_indicator_official">KeyStore</string>
     <string name="wallet_indicator_private_key">私钥</string>
 
+    <string name="all">全部</string>
+    <string name="other">其他</string>
+
+    <string name="share_tip">邀请好友一起使用PayPort~</string>
+    <string name="share_tip1">方式一：通过二维码获取下载页安装PayPort</string>
+    <string name="share_tip2">方式二：发送下载页链接给好友</string>
+    <string name="share_tip3">我正在使用PayPort管理自己的数字资产，邀请你一起使用</string>
+
+    <string name="backup_tip">身份验证通过后，即将显示私钥信息，请妥善保管。</string>
+
+    <string name="click_copy">(点击复制)</string>
+    <string name="qrcode_copy_success">复制成功</string>
+    <string name="saved_successfully">保存成功</string>
     <!--我的-->
     <string name="wallet_manager">管理钱包</string>
     <string name="backup_mnemonics">备份助记词</string>
     <string name="network_settings">网络设置</string>
     <string name="language_settings">语言设置</string>
-    <string name="share">分享</string>
+    <string name="share">邀请好友</string>
     <string name="notice">公告</string>
     <string name="clean_cache">清理缓存</string>
     <string name="about">关于我们</string>
     <string name="confirm">确认</string>
     <string name="determine">确定</string>
+    <string name="complete">完成</string>
+
     <string name="old_password">旧密码</string>
     <string name="new_password">新密码</string>
     <string name="confirm_password">确认新密码</string>
@@ -91,11 +124,22 @@
     <string name="input_confirm_new_password">请输入确认新密码</string>
     <string name="old_password_error">原密码错误</string>
     <string name="modify_password_success">修改密码成功</string>
+    <string name="success_modify_wallet_name">修改钱包名称成功</string>
+    <string name="failed_modify_wallet_name">修改钱包名称失败</string>
+    <string name="enter_address">请输入或粘贴地址</string>
+
+
+    <string name="click_show_key">点击显示私钥</string>
+    <string name="click_show_mnemonic">点击显示助记词</string>
+    <string name="click_show_key_store">点击显示KeyStore</string>
+
     <string name="ethereum_net">Ethereum Main Net</string>
     <string name="poriot_net">Poriot Network</string>
     <string name="bsc_net">BSC</string>
     <string name="huobi_net">Huobi Eco Chain Main Net</string>
     <string name="tron_net">Tron</string>
+
+
     <string name="infromation">信息</string>
     <string name="network_terminology">网络术语</string>
     <string name="chain_identification">链标识</string>
@@ -104,6 +148,10 @@
     <string name="chinese">中文（简体）</string>
     <string name="english">英文</string>
     <string name="save">保存至相册</string>
+    <string name="share_friends">分享给好友</string>
     <string name="cache_cleared">已清除缓存</string>
     <string name="no_message">暂无消息</string>
+
+    <string name="turn_on_flash">\n 环境过暗，请打开闪光灯</string>
+    <string name="error_opening_camera">打开相机出错</string>
 </resources>

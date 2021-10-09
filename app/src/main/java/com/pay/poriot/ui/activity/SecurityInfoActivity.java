@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.lxj.xpopup.XPopup;
 import com.pay.poriot.R;
 import com.pay.poriot.base.BaseActivity;
 import com.pay.poriot.base.IPresenter;
+import com.pay.poriot.dialog.BackupMneBottomPopup;
+import com.pay.poriot.dialog.ChangeNameBottomPopup;
 import com.pay.poriot.util.ViewUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,11 +68,23 @@ public class SecurityInfoActivity extends BaseActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.ll_change_name:
-
+                new XPopup.Builder(this)
+                        .isViewMode(true)
+                        .autoOpenSoftInput(true)
+                        .moveUpToKeyboard(false)
+                        .enableDrag(true)
+                        .asCustom(new ChangeNameBottomPopup(this))
+                        .show();
                 break;
             case R.id.ll_export_private_key:
-                break;
             case R.id.ll_export_keystore:
+                new XPopup.Builder(this)
+                        .isViewMode(true)
+                        .autoOpenSoftInput(true)
+                        .moveUpToKeyboard(false)
+                        .enableDrag(true)
+                        .asCustom(new BackupMneBottomPopup(this))
+                        .show();
                 break;
             default:
                 break;
